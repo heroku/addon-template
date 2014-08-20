@@ -1,0 +1,23 @@
+{
+    "name": "Heroku Add-on Template",
+    "description": "Sinatra-based Heroku Add-on template",
+    "website": "https://github.com/heroku/addon-template",
+    "repository": "https://github.com/heroku/addon-template",
+    "logo": "http://f.cl.ly/items/2f1z0E0X2t1C141M0x1L/heroku-add-ons.png",
+    "success_url": "/",
+    "keywords": [
+        "heroku",
+        "add-on",
+        "saas"
+    ],
+    "scripts": {
+        "postdeploy": "bundle exec rake db:migrate"
+    },
+    "addons": [
+        "papertrail",
+        "heroku-postgresql",
+        "pgbackups:auto-week",
+        "rollbar",
+        "mailgun"
+    ]
+}
