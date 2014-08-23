@@ -15,9 +15,10 @@ Then run the following commands to work with the generated code locally:
 
 ```sh-session
 heroku git:clone --app <new-app-name>
-bundle install
+bin/setup
 kensa init
 edit addon-manifest.json
+kensa push
 ```
 
 ### addon-manifest.json
