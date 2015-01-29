@@ -1,6 +1,6 @@
 module Mediators::Resources
   class Updater < Mediators::Base
-    def initialize(resource: resource, plan: plan)
+    def initialize(resource:, plan:)
       @resource = resource
       @plan_name = plan
     end
