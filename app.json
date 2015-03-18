@@ -16,7 +16,6 @@
     "addons": [
         "papertrail",
         "heroku-postgresql",
-        "pgbackups:auto-week",
         "rollbar",
         "mailgun"
     ]
