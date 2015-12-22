@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.2.0"
+ruby "2.2.4"
 
 gem "multi_json"
 gem "oj"
