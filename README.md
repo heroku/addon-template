@@ -38,4 +38,4 @@ your add-on, include every uppercase variable name here. You _must_ list every
 variable you will send in response to a provision request, or your response
 will be rejected, and installation will fail for the customer.
 
-If your add-on does not rely on providing environment variables 
+If your add-on does not rely on providing environment variables
