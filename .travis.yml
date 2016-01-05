@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+  - 2.3.0
+cache: bundler
+sudo: false
+before_script:
+  - cp .env.travis .env.test
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - bin/setup
+script:
+  - bundle exec rspec spec
+addons:
+  postgresql: '9.4'

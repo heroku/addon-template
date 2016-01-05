@@ -17,7 +17,7 @@ Then run the following commands to work with the generated code locally:
 heroku git:clone --app <new-app-name>
 bin/setup
 kensa init
-edit addon-manifest.json
+#edit addon-manifest.json in your favorite editor
 kensa push
 ```
 
@@ -38,4 +38,13 @@ your add-on, include every uppercase variable name here. You _must_ list every
 variable you will send in response to a provision request, or your response
 will be rejected, and installation will fail for the customer.
 
-If your add-on does not rely on providing environment variables 
+If your add-on does not rely on providing environment variables, then you do
+not need to list config vars here.
+
+### Using Kensa to test your service
+
+Refer to the [Building a Heroku Add-on](https://devcenter.heroku.com/articles/building-a-heroku-add-on) article for instructions and how to use kensa to test your add-on service.
+
+## License
+
+MIT License. See [LICENSE](https://github.com/heroku/addon-template/blob/master/LICENSE).
