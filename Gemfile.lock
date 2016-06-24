@@ -51,16 +51,18 @@ GEM
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.8.2)
     mime-types (1.25.1)
-    mini_portile (0.6.0)
+    mini_portile2 (2.1.0)
     minitest (5.5.1)
     multi_json (1.10.1)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
-    nokogiri (1.6.3.1)
-      mini_portile (= 0.6.0)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     ntlm-http (0.1.1)
     oj (2.9.0)
     pg (0.18.1)
+    pkg-config (1.1.7)
     pliny (0.6.2)
       activesupport (~> 4.1, >= 4.1.0)
       http_accept (~> 0.1, >= 0.1.5)
@@ -84,9 +86,8 @@ GEM
     pry-doc (0.6.0)
       pry (~> 0.9)
       yard (~> 0.8)
-    puma (2.8.2)
-      rack (>= 1.1, < 2.0)
-    rack (1.6.0)
+    puma (3.4.0)
+    rack (1.6.4)
     rack-protection (1.5.3)
       rack
     rack-ssl (1.4.1)
@@ -179,3 +180,9 @@ DEPENDENCIES
   sinatra-contrib
   sinatra-router
   sucker_punch
+
+RUBY VERSION
+   ruby 2.3.1p112
+
+BUNDLED WITH
+   1.12.5
