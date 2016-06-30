@@ -45,6 +45,19 @@ not need to list config vars here.
 
 Refer to the [Building a Heroku Add-on](https://devcenter.heroku.com/articles/building-a-heroku-add-on) article for instructions and how to use kensa to test your add-on service.
 
+### Initializing and using postgres extensions on linux
+
+If you're using postgres on linux (rather than osx), you're probably not using
+a superuser account during development.  This means the database init run
+during `./bin/setup` will fail due to insufficient privileges.
+
+The easiest fix is to add the relevant procedural languages to `template1` as
+the postgres superuser, and then re-run `./bin/setup`.
+
+        sudo -u postgres psql template1
+        psql# create extension "plpgsql";
+        psql# create extension "uuid-ossp";
+
 ## License
 
 MIT License. See [LICENSE](https://github.com/heroku/addon-template/blob/master/LICENSE).
