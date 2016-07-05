@@ -9,8 +9,11 @@ ENV["RACK_ENV"] = "test"
 ENV['HEROKU_USERNAME'] = "addon-test"
 ENV['HEROKU_PASSWORD'] = "123456"
 
+
 require "bundler"
+require "dotenv"
 Bundler.require(:default, :test)
+Dotenv.load('.env.test')
 
 root = File.expand_path("../../", __FILE__)
 ENV.update(Pliny::Utils.parse_env("#{root}/.env.test"))
@@ -19,16 +22,26 @@ require_relative "../lib/initializer"
 
 require "fabrication"
 
-DatabaseCleaner.strategy = :transaction
+# Get only App Config first, to avoid pulling in libraries until
+# spec_support has a chance to run, which is important for at least
+# simplecov and code coverage.
+require_relative "../config/config"
 
 # pull in test initializers
-Pliny::Utils.require_glob("#{Config.root}/spec/support/**/*.rb")
+Pliny::Utils.require_glob("#{Config.root}/spec/spec_support/**/*.rb")
+
+require_relative "../lib/initializer"
 
 RSpec.configure do |config|
+  config.before :suite do
+    DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
+  end
+
   config.before :all do
     load('db/seeds.rb') if File.exist?('db/seeds.rb')
   end
-  
+
   config.before :each do
     DatabaseCleaner.start
   end
@@ -37,6 +50,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
+  # config.disable_monkey_patching!
+  # config.expect_with :minitest
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
 

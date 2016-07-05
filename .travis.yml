@@ -5,6 +5,8 @@ cache: bundler
 sudo: false
 before_script:
   - cp .env.travis .env.test
+    # Comment postgres 9.5 specific dump params because travis only supports postgres =< 9.4
+  - sed -i 's/SET row_security/-- SET row_security/' db/schema.sql
   - psql -c 'create database travis_ci_test;' -U postgres
   - bin/setup
 script:
