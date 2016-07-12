@@ -23,6 +23,7 @@ gem "sucker_punch"
 group :development, :test do
   gem "fabrication"
   gem "pry-byebug"
+  gem "bundler-audit", require: false
 end
 
 group :development do

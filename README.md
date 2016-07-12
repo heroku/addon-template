@@ -21,6 +21,8 @@ kensa init
 kensa push
 ```
 
+## Notes
+
 ### addon-manifest.json
 
 **id**
@@ -57,6 +59,13 @@ the postgres superuser, and then re-run `./bin/setup`.
         sudo -u postgres psql template1
         psql# create extension "plpgsql";
         psql# create extension "uuid-ossp";
+
+### bundler-audit
+
+We use [bundler-audit](https://github.com/rubysec/bundler-audit) to ensure we
+aren't using gems with known vulnerabilities. It runs automatically in the
+default rake task and, consequently, on travisci. If a gem with a known
+vulnerability is found, the build will fail.
 
 ## License
 
