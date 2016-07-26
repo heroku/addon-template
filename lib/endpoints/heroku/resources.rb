@@ -20,6 +20,12 @@ module Endpoints
         )
         resource = creator.call
 
+        # FIXME: If your add-on provides configuration through environment
+        # variables (say, for an app to connect to a service you provide),
+        # you'd return those here.
+        #
+        # See: https://devcenter.heroku.com/articles/building-a-heroku-add-on#2-implement-the-provision-call
+
         status 201
         MultiJson.encode(id: resource.uuid)
       end
@@ -30,6 +36,12 @@ module Endpoints
           plan: body_params['plan']
         )
         updater.call
+
+        # FIXME: If a plan change requires that you issue new credentials,
+        # you'd return those credentials here similar to a provisioning
+        # request.
+        #
+        # See: https://devcenter.heroku.com/articles/building-a-heroku-add-on#8-plan-changes
 
         status 200
         MultiJson.encode({})
