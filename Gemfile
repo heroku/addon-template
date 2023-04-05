@@ -4,20 +4,20 @@ ruby "2.3.1"
 gem "multi_json"
 gem "oj"
 gem "pg"
-gem "pliny", "~> 0.17"
+gem "pliny", "~> 0.28", ">= 0.28.0"
 gem "pry"
 gem "pry-doc"
-gem "puma"
+gem "puma", ">= 4.3.12"
 gem "rack-ssl"
 gem "rack-timeout", "~> 0.4"
-gem "rake"
+gem "rake", ">= 12.3.3"
 gem "rollbar", require: "rollbar/middleware/sinatra"
 gem "sequel", "~> 4.34"
 gem "sequel-paranoid"
 gem "sequel_pg", "~> 1.6", require: "sequel"
-gem "sinatra", "~> 1.4", require: "sinatra/base"
-gem "sinatra-contrib", require: ["sinatra/namespace", "sinatra/reloader"]
-gem "sinatra-router"
+gem "sinatra", "~> 2.2", ">= 2.2.3", require: "sinatra/base"
+gem "sinatra-contrib", "2.2.3", require: ["sinatra/namespace"
+gem "sinatra-router", ">= 0.2.4"
 gem "sucker_punch"
 
 group :development, :test do
@@ -28,7 +28,7 @@ end
 
 group :development do
   gem "foreman"
-  gem "kensa"
+  gem "kensa", ">= 3.0.2"
 end
 
 group :test do
