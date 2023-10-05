@@ -16,7 +16,7 @@ gem "sequel", "~> 4.34"
 gem "sequel-paranoid"
 gem "sequel_pg", "~> 1.6", require: "sequel"
 gem "sinatra", "~> 1.4", require: "sinatra/base"
-gem "sinatra-contrib", require: ["sinatra/namespace", "sinatra/reloader"]
+gem "sinatra-contrib", "2.0.1", require: ["sinatra/namespace"
 gem "sinatra-router"
 gem "sucker_punch"
 
