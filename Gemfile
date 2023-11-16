@@ -28,7 +28,7 @@ end
 
 group :development do
   gem "foreman"
-  gem "kensa"
+  gem "kensa", ">= 3.0.2"
 end
 
 group :test do
