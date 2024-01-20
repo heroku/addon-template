@@ -15,8 +15,8 @@ gem "rollbar", require: "rollbar/middleware/sinatra"
 gem "sequel", "~> 4.34"
 gem "sequel-paranoid"
 gem "sequel_pg", "~> 1.6", require: "sequel"
-gem "sinatra", "~> 1.4", require: "sinatra/base"
-gem "sinatra-contrib", require: ["sinatra/namespace", "sinatra/reloader"]
+gem "sinatra", "~> 4.0", ">= 4.0.0", require: "sinatra/base"
+gem "sinatra-contrib", "4.0.0", require: ["sinatra/namespace"
 gem "sinatra-router"
 gem "sucker_punch"
 
